@@ -1,0 +1,7 @@
+{
+  "name": "Smart Teacher Attendance",
+  "description": "Smart online faculty and teacher attendance management app for school administrators and principals to track daily faculty attendance, manage departments, calculate attendance percentages, and generate reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
