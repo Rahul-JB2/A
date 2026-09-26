@@ -39,7 +39,7 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: smart-teacher-attendance-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+          name: smart-teacher-attendance-release-test-apk
+          path: app/build/outputs/apk/release/*.apk
           if-no-files-found: error
           retention-days: 14
