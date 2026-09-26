@@ -28,8 +28,13 @@ jobs:
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
 
-      - name: Build debug APK
-        run: ./gradlew :app:assembleDebug --stacktrace
+      - name: Create test keystore
+        run: |
+          keytool -genkeypair -v -keystore test-release.keystore -storepass testpassword -alias testkey -keypass testpassword -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Test, OU=Development, O=Local, L=Local, ST=Local, C=IN"
+          cp test-release.keystore test-debug.keystore
+
+      - name: Build signed release APK
+        run: ./gradlew :app:assembleRelease --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
